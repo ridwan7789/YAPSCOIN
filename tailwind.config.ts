@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ['"Luckiest Guy"', 'cursive'],
+        body: ['"Baloo 2"', 'cursive'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +61,9 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        neonGlow: "hsl(var(--neon-glow))",
+        goldGlow: "hsl(var(--gold-glow))",
+        purpleGlow: "hsl(var(--purple-glow))",
       },
       borderRadius: {
         lg: "var(--radius)",
