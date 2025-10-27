@@ -6,29 +6,29 @@ import { Rocket, Coins, Image, Repeat } from "lucide-react";
 const roadmapItems = [
   {
     quarter: "Q1 2025",
-    title: "Launch & Airdrop",
-    description: "Token launch, initial CEX listings, and massive airdrop campaign",
+    title: "YAPS Genesis",
+    description: "Token launch with community rewards and hilarious airdrops",
     icon: Rocket,
     color: "hsl(37 100% 64%)",
   },
   {
     quarter: "Q2 2025",
-    title: "MemeVerse Portal",
-    description: "Interactive metaverse experience for the community",
+    title: "Meme Factory",
+    description: "Launch our platform for creating the wildest crypto memes",
     icon: Coins,
     color: "hsl(188 100% 43%)",
   },
   {
     quarter: "Q3 2025",
-    title: "NFT Drop",
-    description: "Exclusive CheemsBlast NFT collection with utility",
+    title: "YAPSverse NFTs",
+    description: "Unique collectible NFTs with real utility and meme power",
     icon: Image,
     color: "hsl(280 80% 60%)",
   },
   {
     quarter: "Q4 2025",
-    title: "CheemsSwap DEX",
-    description: "Launch our own decentralized exchange",
+    title: "YAPS DEX",
+    description: "Fully decentralized exchange for all your meme trading needs",
     icon: Repeat,
     color: "hsl(0 100% 60%)",
   },
@@ -47,7 +47,7 @@ export const RoadmapSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          Roadmap 🗺️
+          Journey to the Moon 🌙
         </motion.h2>
 
         <motion.p
@@ -56,7 +56,7 @@ export const RoadmapSection = () => {
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.3 }}
         >
-          Our journey to the moon and beyond
+          Our hilarious path to crypto stardom
         </motion.p>
 
         {/* Timeline */}

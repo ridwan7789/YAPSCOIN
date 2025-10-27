@@ -4,6 +4,32 @@ import { Rocket, Sparkles } from "lucide-react";
 import heroSpace from "@/assets/hero-space.jpg";
 
 export const HeroSection = () => {
+  // URLs for the buttons - these will need to be updated with actual token addresses when available
+  const buyYapsUrl = "https://pancakeswap.finance/swap?outputCurrency=YOUR_YAPS_TOKEN_ADDRESS"; // Pancakeswap URL
+  const yapsChartUrl = "https://www.dextools.io/app/en/bsc/pair-explorer/YOUR_YAPS_TOKEN_ADDRESS"; // DexTools chart URL
+
+  // Sound effects
+  const playSound = (soundFile) => {
+    const audio = new Audio(`/mixkit-${soundFile}`);
+    audio.play().catch(e => console.log("Audio play error:", e)); // Ignore autoplay restrictions
+  };
+
+  const handleBuyClick = () => {
+    playSound("happy-puppy-barks-741.wav"); // Positive sound for buying
+    // Delay navigation slightly to allow sound to play
+    setTimeout(() => {
+      window.open(buyYapsUrl, '_blank', 'noopener,noreferrer');
+    }, 100);
+  };
+
+  const handleChartClick = () => {
+    playSound("fast-rocket-whoosh-1714.wav"); // Exciting sound for chart
+    // Delay navigation slightly to allow sound to play
+    setTimeout(() => {
+      window.open(yapsChartUrl, '_blank', 'noopener,noreferrer');
+    }, 100);
+  };
+
   return (
     <section 
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
@@ -58,7 +84,7 @@ export const HeroSection = () => {
             }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            CheemsBlast 🚀
+            YAPS COIN 🤟
           </motion.h1>
           
           <motion.p 
@@ -67,7 +93,7 @@ export const HeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            The Funniest Coin in The Galaxy
+            Where Memes Meet Money
           </motion.p>
 
           <motion.p 
@@ -76,7 +102,8 @@ export const HeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            Fuel your laughter. Moon your wallet. Join the memetic revolution.
+            The funniest, most unpredictable crypto experience in the galaxy! 
+            HODL with laughter and maybe moon with us!
           </motion.p>
 
           <motion.div 
@@ -85,29 +112,14 @@ export const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
           >
-            <Button variant="hero" size="xl" className="group">
+            <Button variant="hero" size="xl" className="group" onClick={handleBuyClick}>
               <Rocket className="mr-2 group-hover:animate-bounce" />
-              Buy $CHEEMS
+              Buy $YAPS
             </Button>
-            <Button variant="neon" size="xl" className="group">
+            <Button variant="neon" size="xl" className="group" onClick={handleChartClick}>
               <Sparkles className="mr-2 group-hover:animate-spin" />
-              Join the Blast
+              YAPS CHART
             </Button>
-          </motion.div>
-
-          <motion.div
-            className="pt-12"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <p className="text-muted-foreground text-sm">Scroll to explore</p>
-            <div className="w-6 h-10 border-2 border-primary rounded-full mx-auto mt-4 relative">
-              <motion.div
-                className="w-2 h-2 bg-primary rounded-full absolute left-1/2 -translate-x-1/2 top-2"
-                animate={{ y: [0, 20, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              />
-            </div>
           </motion.div>
         </motion.div>
       </div>

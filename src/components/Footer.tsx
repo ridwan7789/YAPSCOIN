@@ -9,7 +9,7 @@ export const Footer = () => {
           {/* Spinning coin */}
           <motion.img
             src={coinIcon}
-            alt="Cheems Coin"
+            alt="YAPS COIN"
             className="w-16 h-16"
             animate={{ rotate: 360 }}
             transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
@@ -22,7 +22,7 @@ export const Footer = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            © 2025 CheemsBlast. Made with laughter & blockchain 😂⛓️
+            © {new Date().getFullYear()} YAPS COIN. Made with laughter & blockchain 😂⛓️
           </motion.p>
 
           {/* Links */}
@@ -39,20 +39,21 @@ export const Footer = () => {
               className="text-muted-foreground hover:text-primary transition-colors"
               whileHover={{ scale: 1.1 }}
             >
-              Audit
+              Audit Report
             </motion.a>
             <motion.a
               href="#"
               className="text-muted-foreground hover:text-primary transition-colors"
               whileHover={{ scale: 1.1 }}
             >
-              Contract
+              Smart Contract
             </motion.a>
           </div>
 
           {/* Disclaimer */}
           <p className="text-xs text-muted-foreground text-center max-w-2xl">
-            Cryptocurrency investments carry risk. Do your own research. CheemsBlast is a meme token for entertainment purposes.
+            YAPS COIN is for entertainment purposes only. This is not financial advice. 
+            Always DYOR and only invest what you can afford to lose.
           </p>
         </div>
       </div>

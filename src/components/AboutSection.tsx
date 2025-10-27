@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import cheemsCharacter from "@/assets/cheems-character.png";
-import { Heart, Users, Shield } from "lucide-react";
+import { Heart, Users, Zap } from "lucide-react";
 
 const bubbles = [
-  { text: "A meme coin with utility!", icon: Shield },
-  { text: "Powered by the community!", icon: Users },
-  { text: "No rug, only hugs 💖", icon: Heart },
+  { text: "100% Community Driven", icon: Users },
+  { text: "Unique Meme Ecosystem", icon: Zap },
+  { text: "Built with BNB", icon: Heart },
 ];
 
 export const AboutSection = () => {
@@ -23,7 +23,7 @@ export const AboutSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          What is CheemsBlast?
+          What is YAPS COIN?
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -36,7 +36,7 @@ export const AboutSection = () => {
           >
             <motion.img
               src={cheemsCharacter}
-              alt="Cheems Character"
+              alt="YAPS COIN Character"
               className="w-full max-w-lg mx-auto animate-float"
               whileHover={{ scale: 1.05, rotate: 5 }}
               transition={{ type: "spring", stiffness: 300 }}
@@ -89,8 +89,8 @@ export const AboutSection = () => {
           className="mt-16 text-center"
         >
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            CheemsBlast combines the power of memes with real blockchain utility. 
-            Built by the community, for the community. No complex jargon, just pure fun and moonshots! 🌙
+            YAPS COIN is more than just another meme coin. We're building a vibrant community where laughter meets financial opportunity. 
+            Our mission is to make crypto accessible and fun for everyone!
           </p>
         </motion.div>
       </div>

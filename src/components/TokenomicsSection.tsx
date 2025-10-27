@@ -4,10 +4,10 @@ import { useRef, useState } from "react";
 import coinIcon from "@/assets/coin-icon.png";
 
 const tokenomicsData = [
-  { label: "Community Rewards", percentage: 40, color: "hsl(37 100% 64%)", description: "For holders and stakers" },
-  { label: "Liquidity", percentage: 30, color: "hsl(188 100% 43%)", description: "Deep liquidity pools" },
-  { label: "Marketing", percentage: 20, color: "hsl(280 80% 60%)", description: "Memes & growth" },
-  { label: "Dev Team", percentage: 10, color: "hsl(0 100% 60%)", description: "Building the future" },
+  { label: "Community Rewards", percentage: 3, color: "hsl(37 100% 64%)", description: "For holders and stakers" },
+  { label: "Liquidity", percentage: 90, color: "hsl(188 100% 43%)", description: "Deep liquidity pools" },
+  { label: "Marketing", percentage: 5, color: "hsl(280 80% 60%)", description: "Memes & growth" },
+  { label: "Dev Team", percentage: 2, color: "hsl(0 100% 60%)", description: "Building the future" },
 ];
 
 export const TokenomicsSection = () => {
@@ -48,7 +48,7 @@ export const TokenomicsSection = () => {
               {/* Coin in center */}
               <motion.img
                 src={coinIcon}
-                alt="Cheems Coin"
+                alt="YAPS COIN"
                 className="absolute inset-0 m-auto w-32 h-32 z-10"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
