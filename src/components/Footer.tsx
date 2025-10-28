@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import coinIcon from "@/assets/coin-icon.png";
+import yapsLogo from "@/assets/yaps-logo.png";
 
 export const Footer = () => {
   return (
@@ -8,7 +8,7 @@ export const Footer = () => {
         <div className="flex flex-col items-center justify-center space-y-6">
           {/* Spinning coin */}
           <motion.img
-            src={coinIcon}
+            src={yapsLogo}
             alt="YAPS COIN"
             className="w-16 h-16"
             animate={{ rotate: 360 }}

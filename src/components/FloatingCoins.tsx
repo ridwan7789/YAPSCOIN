@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import coinIcon from "@/assets/coin-icon.png";
+import yapsLogo from "@/assets/yaps-logo.png";
 
 export const FloatingCoins = () => {
   const coins = Array.from({ length: 15 });
@@ -9,7 +9,7 @@ export const FloatingCoins = () => {
       {coins.map((_, i) => (
         <motion.img
           key={i}
-          src={coinIcon}
+          src={yapsLogo}
           alt=""
           className="absolute w-12 h-12 opacity-20"
           style={{
