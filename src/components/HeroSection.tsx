@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Rocket, Sparkles } from "lucide-react";
-import bannerSpace from "@/assets/banner-space.png";
+import banerSpace from "@/assets/baner-space.png";
 
 export const HeroSection = () => {
   // URLs for the buttons - these will need to be updated with actual token addresses when available
@@ -34,7 +34,7 @@ export const HeroSection = () => {
     <section 
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage: `url(${bannerSpace})`,
+        backgroundImage: `url(${banerSpace})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
