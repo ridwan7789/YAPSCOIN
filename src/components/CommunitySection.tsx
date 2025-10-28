@@ -204,9 +204,9 @@ export const CommunitySection = () => {
         >
           <h3 id="stats-heading" className="sr-only">Community Statistics</h3>
           {[
-            { value: "50K+", label: "Holders" },
-            { value: "$10M+", label: "Volume" },
-            { value: "∞", label: "Fun" },
+            { value: "0", label: "Holders" },
+            { value: "$10k", label: "Start MCAP" },
+            { value: "∞", label: "Fun COIN" },
           ].map((stat, i) => (
             <div key={i} className="text-center" role="listitem">
               <motion.p
