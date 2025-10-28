@@ -8,7 +8,7 @@ export const FloatingCoins = () => {
       {coins.map((_, i) => (
         <motion.img
           key={i}
-          src="/src/assets/webp/yaps-logo.webp"
+          src="/assets/webp/yaps-logo.webp"
           alt=""
           className="absolute w-8 h-8 opacity-10" // Smaller and more transparent to reduce visual impact
           style={{

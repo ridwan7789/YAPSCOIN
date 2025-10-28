@@ -96,7 +96,7 @@ export const CommunitySection = () => {
             aria-hidden="true" // Decorative element
           >
             <motion.img
-              src="/src/assets/webp/cheems-character.webp"
+              src="/assets/webp/cheems-character.webp"
               alt={YAPS_CONFIG.APP_NAME + " character dancing and welcoming new members"}
               className="w-full max-w-md mx-auto"
               animate={{

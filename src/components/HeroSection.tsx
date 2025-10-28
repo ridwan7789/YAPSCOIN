@@ -43,7 +43,7 @@ export const HeroSection = () => {
     <section 
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage: "url('/src/assets/webp/baner-space.webp')",
+        backgroundImage: "url('/assets/webp/baner-space.webp')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}

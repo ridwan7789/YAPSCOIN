@@ -46,7 +46,7 @@ export const TokenomicsSection = () => {
             <div className="relative w-full aspect-square max-w-md mx-auto">
               {/* Coin in center */}
               <motion.img
-                src="/src/assets/webp/yaps-logo.webp"
+                src="/assets/webp/yaps-logo.webp"
                 alt="YAPS COIN token logo in center of pie chart"
                 className="absolute inset-0 m-auto w-32 h-32 z-10"
                 animate={{ rotate: 360 }}

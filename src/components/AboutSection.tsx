@@ -40,7 +40,7 @@ export const AboutSection = () => {
             aria-hidden="true" // Decorative element
           >
             <motion.img
-              src="/src/assets/webp/cheems-character.webp"
+              src="/assets/webp/cheems-character.webp"
               alt="YAPS COIN character floating in space with animated effects"
               className="w-full max-w-lg mx-auto animate-float"
               whileHover={{ scale: 1.05, rotate: 5 }}

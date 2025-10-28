@@ -11,7 +11,7 @@ export const Footer = () => {
         <div className="flex flex-col items-center justify-center space-y-6">
           {/* Spinning coin */}
           <motion.img
-            src="/src/assets/webp/yaps-logo.webp"
+            src="/assets/webp/yaps-logo.webp"
             alt="YAPS COIN logo spinning"
             className="w-16 h-16"
             animate={{ rotate: 360 }}
