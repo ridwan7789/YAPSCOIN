@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import yapsLogo from "@/assets/yaps-logo.png";
 
 const tokenomicsData = [
   { label: "Community Rewards", percentage: 3, color: "hsl(37 100% 64%)", description: "For holders and stakers" },
@@ -47,8 +46,8 @@ export const TokenomicsSection = () => {
             <div className="relative w-full aspect-square max-w-md mx-auto">
               {/* Coin in center */}
               <motion.img
-                src={yapsLogo}
-                alt="YAPS COIN"
+                src="/src/assets/webp/yaps-logo.webp"
+                alt="YAPS COIN token logo in center of pie chart"
                 className="absolute inset-0 m-auto w-32 h-32 z-10"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}

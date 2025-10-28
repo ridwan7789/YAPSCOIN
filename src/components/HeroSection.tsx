@@ -1,17 +1,26 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Rocket, Sparkles } from "lucide-react";
-import banerSpace from "@/assets/baner-space.png";
+import { YAPS_CONFIG } from "@/lib/constants";
 
 export const HeroSection = () => {
-  // URLs for the buttons - these will need to be updated with actual token addresses when available
-  const buyYapsUrl = "https://pancakeswap.finance/swap?outputCurrency=YOUR_YAPS_TOKEN_ADDRESS"; // Pancakeswap URL
-  const yapsChartUrl = "https://www.dextools.io/app/en/bsc/pair-explorer/YOUR_YAPS_TOKEN_ADDRESS"; // DexTools chart URL
+  // URLs for the buttons - these will be loaded from config
+  const buyYapsUrl = YAPS_CONFIG.EXCHANGE_URL;
+  const yapsChartUrl = YAPS_CONFIG.CHART_URL;
 
-  // Sound effects
-  const playSound = (soundFile) => {
-    const audio = new Audio(`/mixkit-${soundFile}`);
-    audio.play().catch(e => console.log("Audio play error:", e)); // Ignore autoplay restrictions
+  // Sound effects with better error handling
+  const playSound = async (soundFile: string) => {
+    try {
+      // Check if audio is allowed to play (user interaction requirement)
+      if (typeof Audio !== 'undefined') {
+        const audio = new Audio(`/mixkit-${soundFile}`);
+        await audio.play();
+      }
+    } catch (e) {
+      // Audio play failed (likely due to autoplay restrictions)
+      // This is expected in many browsers, so we just silently handle it
+      console.debug("Audio play prevented by browser:", e);
+    }
   };
 
   const handleBuyClick = () => {
@@ -34,17 +43,18 @@ export const HeroSection = () => {
     <section 
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage: `url(${banerSpace})`,
+        backgroundImage: "url('/src/assets/webp/baner-space.webp')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
+      aria-label="YAPS COIN hero section with buy and chart links"
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background" />
       
       {/* Stars background */}
       <div className="absolute inset-0">
-        {Array.from({ length: 50 }).map((_, i) => (
+        {Array.from({ length: YAPS_CONFIG.ANIMATION.starCount }).map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-1 h-1 bg-foreground rounded-full"
@@ -61,6 +71,7 @@ export const HeroSection = () => {
               repeat: Infinity,
               delay: Math.random() * 2,
             }}
+            aria-hidden="true" // Animated decorative elements don't need to be announced by screen readers
           />
         ))}
       </div>
@@ -77,12 +88,13 @@ export const HeroSection = () => {
             className="text-6xl md:text-8xl lg:text-9xl font-display text-glow-gold leading-tight"
             animate={{ 
               textShadow: [
-                "0 0 20px hsl(37 100% 64%), 0 0 40px hsl(37 100% 64%)",
-                "0 0 30px hsl(37 100% 64%), 0 0 60px hsl(37 100% 64%)",
-                "0 0 20px hsl(37 100% 64%), 0 0 40px hsl(37 100% 64%)",
+                `0 0 ${YAPS_CONFIG.ANIMATION.glowIntensity}px hsl(37 100% 64%), 0 0 ${YAPS_CONFIG.ANIMATION.glowIntensity * 2}px hsl(37 100% 64%)`,
+                `0 0 ${YAPS_CONFIG.ANIMATION.glowIntensity * 1.5}px hsl(37 100% 64%), 0 0 ${YAPS_CONFIG.ANIMATION.glowIntensity * 3}px hsl(37 100% 64%)`,
+                `0 0 ${YAPS_CONFIG.ANIMATION.glowIntensity}px hsl(37 100% 64%), 0 0 ${YAPS_CONFIG.ANIMATION.glowIntensity * 2}px hsl(37 100% 64%)`,
               ],
             }}
             transition={{ duration: 2, repeat: Infinity }}
+            id="hero-title"
           >
             YAPS COIN 🤟
           </motion.h1>
@@ -92,6 +104,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
+            aria-describedby="hero-subtitle"
           >
             Where Memes Meet Money
           </motion.p>
@@ -101,9 +114,13 @@ export const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
+            id="hero-subtitle"
           >
-            The funniest, most unpredictable crypto experience in the galaxy! 
-            HODL with laughter and maybe moon with us!
+            When the market crashes,<br />
+            When everyone panics,<br />
+            The Yaps community just says:<br />
+            🤟 "YAPS, it's okay." 🤟<br />
+            YAPS 🤟 YAPS 🤟 YAPS 🤟 YAPS 🤟 YAPS
           </motion.p>
 
           <motion.div 
@@ -111,13 +128,15 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
+            role="group"
+            aria-labelledby="action-buttons"
           >
-            <Button variant="hero" size="xl" className="group" onClick={handleBuyClick}>
-              <Rocket className="mr-2 group-hover:animate-bounce" />
+            <Button variant="hero" size="xl" className="group" onClick={handleBuyClick} aria-label="Buy YAPS COIN on Pancakeswap">
+              <Rocket className="mr-2 group-hover:animate-bounce" aria-hidden="true" />
               Buy $YAPS
             </Button>
-            <Button variant="neon" size="xl" className="group" onClick={handleChartClick}>
-              <Sparkles className="mr-2 group-hover:animate-spin" />
+            <Button variant="neon" size="xl" className="group" onClick={handleChartClick} aria-label="View YAPS COIN chart on DexTools">
+              <Sparkles className="mr-2 group-hover:animate-spin" aria-hidden="true" />
               YAPS CHART
             </Button>
           </motion.div>
