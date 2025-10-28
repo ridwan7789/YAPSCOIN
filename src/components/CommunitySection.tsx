@@ -23,7 +23,7 @@ const handleTwitterClick = (e) => {
 
 const socialLinks = [
   { name: "Telegram", icon: MessageCircle, color: "hsl(188 100% 43%)", emoji: "🤟", url: "https://t.me/YAPSofficial", onClick: handleTelegramClick },
-  { name: "X (Twitter)", icon: Twitter, color: "hsl(37 100% 64%)", emoji: "🐦", url: "https://x.com/YAPSofficial", onClick: handleTwitterClick }, // Replace with actual Twitter handle if different
+  { name: "X (Twitter)", icon: Twitter, color: "hsl(37 100% 64%)", emoji: "🐦", url: "https://x.com/yapscoin", onClick: handleTwitterClick }, // Replace with actual Twitter handle if different
 ];
 
 export const CommunitySection = () => {
