@@ -22,6 +22,24 @@ To run this project locally, you'll need to have Node.js installed:
 - Framer Motion for animations
 - shadcn/ui components
 
+## SEO Optimization Features
+
+This project includes comprehensive SEO optimization features:
+
+- **Meta Tags**: Complete Open Graph and Twitter Card meta tags for social sharing
+- **Structured Data**: JSON-LD schemas for Organization, Website, Article, Breadcrumb, and Cryptocurrency
+- **Semantic HTML**: Proper heading hierarchy (H1, H2, H3) and semantic elements
+- **Image Optimization**: WebP format with descriptive alt tags and title attributes
+- **Performance**: Optimized loading with lazy loading and proper image decoding
+- **Robots.txt**: Configured to allow crawling and reference sitemap
+- **Sitemap.xml**: Comprehensive sitemap for search engine indexing
+
 ## Deployment
 
 This project can be deployed to any static hosting service like Vercel, Netlify, Cloudflare, AWS, etc. using standard Vite deployment procedures.
+
+For optimal SEO performance after deployment:
+1. Update canonical URLs to your actual domain
+2. Replace placeholder images with actual og-image.jpg
+3. Update social media links with your actual profiles
+4. Configure Google Search Console and Bing Webmaster Tools

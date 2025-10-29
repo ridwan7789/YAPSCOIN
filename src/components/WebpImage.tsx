@@ -16,6 +16,9 @@ interface WebpImageProps {
   priority?: boolean;
   placeholder?: 'blur' | 'empty';
   blurDataURL?: string;
+  title?: string; // For SEO purposes
+  loading?: 'eager' | 'lazy'; // Override default loading behavior
+  decoding?: 'async' | 'sync' | 'auto'; // Override default decoding behavior
 }
 
 const WebpImage: React.FC<WebpImageProps> = ({
@@ -26,7 +29,10 @@ const WebpImage: React.FC<WebpImageProps> = ({
   height,
   priority = false,
   placeholder = 'empty',
-  blurDataURL
+  blurDataURL,
+  title,
+  loading: loadingProp = 'lazy',
+  decoding: decodingProp = 'async'
 }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -53,8 +59,8 @@ const WebpImage: React.FC<WebpImageProps> = ({
   }, []);
 
   // Path ke direktori WebP
-  const webpPath = `/src/assets/webp/${name}.webp`;
-  const fallbackPath = `/src/assets/${name}.${name === 'hero-space' ? 'jpg' : 'png'}`;
+  const webpPath = `/assets/webp/${name}.webp`;
+  const fallbackPath = `/assets/${name}.${name === 'hero-space' ? 'jpg' : 'png'}`;
   const finalPath = supportsWebP && !showFallback ? webpPath : fallbackPath;
 
   const handleLoad = () => {
@@ -70,6 +76,9 @@ const WebpImage: React.FC<WebpImageProps> = ({
       setImageError(true);
     }
   };
+
+  // Set loading behavior based on priority prop or passed loading prop
+  const finalLoading = priority ? 'eager' : loadingProp;
 
   return (
     <div className={`relative overflow-hidden ${className}`}>
@@ -88,11 +97,17 @@ const WebpImage: React.FC<WebpImageProps> = ({
         alt={alt}
         width={width}
         height={height}
+        title={title}
         onLoad={handleLoad}
         onError={handleError}
         className={`w-full h-full object-cover ${imageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
-        loading={priority ? 'eager' : 'lazy'}
-        decoding="async" // Decode image asynchronously to improve performance
+        loading={finalLoading}
+        decoding={decodingProp}
+        // Add image dimensions for SEO and performance
+        style={{
+          width: width ? `${width}px` : '100%',
+          height: height ? `${height}px` : 'auto',
+        }}
       />
       
       {/* Loading indicator */}

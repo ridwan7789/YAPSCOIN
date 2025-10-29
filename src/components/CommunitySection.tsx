@@ -45,6 +45,32 @@ export const CommunitySection = () => {
       className="relative py-24 px-4 overflow-hidden bg-gradient-to-b from-background to-card"
       aria-labelledby="community-heading"
     >
+      {/* SEO Schema markup */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SocialMediaPosting",
+          "headline": "Join Our Community",
+          "description": "Be part of the YAPS COIN revolution - where memes meet moonbags!",
+          "author": {
+            "@type": "Organization",
+            "name": "YAPS COIN"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "YAPS COIN",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "/assets/webp/yaps-logo.webp"
+            }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://yapscoin.com/"
+          }
+        })}
+      </script>
+
       {/* Animated background */}
       <div className="absolute inset-0 opacity-10">
         <motion.div
@@ -150,7 +176,7 @@ export const CommunitySection = () => {
                 <a 
                   href={social.url} 
                   target="_blank" 
-                  rel="noopener noreferrer" 
+                  rel="noopener noreferrer nofollow" 
                   onClick={social.onClick}
                   className="block"
                   aria-label={`Connect with us on ${social.name}`}

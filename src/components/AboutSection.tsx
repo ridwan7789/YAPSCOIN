@@ -37,11 +37,11 @@ export const AboutSection = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
             className="relative"
-            aria-hidden="true" // Decorative element
           >
             <motion.img
               src="/assets/webp/cheems-character.webp"
-              alt="YAPS COIN character floating in space with animated effects"
+              alt="YAPS COIN mascot character floating in space - The funniest meme coin in the galaxy"
+              title="YAPS COIN Character"
               className="w-full max-w-lg mx-auto animate-float"
               whileHover={{ scale: 1.05, rotate: 5 }}
               transition={{ type: "spring", stiffness: 300 }}

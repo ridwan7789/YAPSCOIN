@@ -1,14 +1,8 @@
-User-agent: Googlebot
-Allow: /
+# www.robotstxt.org/
 
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
+# Allow crawling of all content
 User-agent: *
 Allow: /
+
+# Sitemap location
+Sitemap: https://yapscoin.com/sitemap.xml

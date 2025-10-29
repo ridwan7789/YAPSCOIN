@@ -49,6 +49,27 @@ export const HeroSection = () => {
       }}
       aria-label="YAPS COIN hero section with buy and chart links"
     >
+      {/* SEO Schema markup */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "YAPS COIN",
+          "description": "The funniest meme coin in the galaxy! Join the memetic revolution with our Binance Smart Chain token.",
+          "url": "https://yapscoin.com/",
+          "logo": "/assets/webp/yaps-logo.webp",
+          "foundingDate": "2025",
+          "founders": ["YAPS Community"],
+          "areaServed": "Worldwide",
+          "slogan": "Where Memes Meet Money",
+          "keywords": "YAPS COIN, meme coin, BSC, cryptocurrency, crypto, token, community, blockchain, DeFi, PancakeSwap",
+          "sameAs": [
+            YAPS_CONFIG.SOCIAL_LINKS.telegram,
+            YAPS_CONFIG.SOCIAL_LINKS.twitter
+          ]
+        })}
+      </script>
+
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background" />
       
@@ -95,6 +116,7 @@ export const HeroSection = () => {
             }}
             transition={{ duration: 2, repeat: Infinity }}
             id="hero-title"
+            itemProp="name"
           >
             YAPS COIN 🤟
           </motion.h1>
