@@ -9,6 +9,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 // Lazy load halaman-halaman yang jarang dikunjungi
 const Index = lazy(() => import("./pages/Index"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const SwapPage = lazy(() => import("./pages/SwapPage"));
 
 // Komponen loading sederhana
 const PageLoader = () => (
@@ -29,6 +30,7 @@ const App = () => (
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<Index />} />
+              <Route path="/swap" element={<SwapPage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

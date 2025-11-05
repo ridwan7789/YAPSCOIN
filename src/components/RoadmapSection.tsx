@@ -13,8 +13,8 @@ const roadmapItems = [
   },
   {
     quarter: "Q2 2025",
-    title: "Meme Factory",
-    description: "Launch our platform for creating the wildest crypto memes",
+    title: "YAPSWAP",
+    description: "Fully decentralized exchange for all your meme trading needs",
     icon: Coins,
     color: "hsl(188 100% 43%)",
   },
@@ -27,8 +27,8 @@ const roadmapItems = [
   },
   {
     quarter: "Q4 2025",
-    title: "YAPS DEX",
-    description: "Fully decentralized exchange for all your meme trading needs",
+    title: "MEME FACTORY",
+    description: "Launch our platform for creating the wildest crypto memes",
     icon: Repeat,
     color: "hsl(0 100% 60%)",
   },

@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Rocket, Sparkles } from "lucide-react";
+import { Rocket, Sparkles, Coins } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { YAPS_CONFIG } from "@/lib/constants";
 
 export const HeroSection = () => {
   // URLs for the buttons - these will be loaded from config
   const buyYapsUrl = YAPS_CONFIG.EXCHANGE_URL;
   const yapsChartUrl = YAPS_CONFIG.CHART_URL;
+  const navigate = useNavigate();
 
   // Sound effects with better error handling
   const playSound = async (soundFile: string) => {
@@ -37,6 +39,12 @@ export const HeroSection = () => {
     setTimeout(() => {
       window.open(yapsChartUrl, '_blank', 'noopener,noreferrer');
     }, 100);
+  };
+
+  const handleSwapClick = () => {
+    playSound("fast-rocket-whoosh-1714.wav"); // Exciting sound for swapping
+    // Navigate to the Yapswap page
+    navigate("/swap");
   };
 
   return (
@@ -160,6 +168,10 @@ export const HeroSection = () => {
             <Button variant="neon" size="xl" className="group" onClick={handleChartClick} aria-label="View YAPS COIN chart on DexTools">
               <Sparkles className="mr-2 group-hover:animate-spin" aria-hidden="true" />
               YAPS CHART
+            </Button>
+            <Button variant="neon" size="xl" className="group" onClick={handleSwapClick} aria-label="Swap tokens on Yapswap">
+              <Coins className="mr-2 group-hover:animate-spin" />
+              Yapswap
             </Button>
           </motion.div>
         </motion.div>
