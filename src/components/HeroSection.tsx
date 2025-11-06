@@ -154,6 +154,17 @@ export const HeroSection = () => {
           </motion.p>
 
           <motion.div 
+            className="bg-card/80 backdrop-blur-sm rounded-xl p-4 max-w-2xl mx-auto border border-border"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            <p className="text-sm md:text-base font-mono text-primary font-bold break-words">
+              YAPS CA: 0x803e02A4DC72fd29216A1dD2AE5cEB004136b4ae
+            </p>
+          </motion.div>
+
+          <motion.div 
             className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

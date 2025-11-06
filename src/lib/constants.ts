@@ -3,7 +3,7 @@
 // YAPS COIN Configuration
 export const YAPS_CONFIG = {
   // Token addresses - to be updated after token launch
-  TOKEN_ADDRESS: import.meta.env.VITE_YAPS_TOKEN_ADDRESS || "YOUR_YAPS_TOKEN_ADDRESS", // This should be updated with actual YAPS token address after launch
+  TOKEN_ADDRESS: import.meta.env.VITE_YAPS_TOKEN_ADDRESS || "0x803e02A4DC72fd29216A1dD2AE5cEB004136b4ae", // This should be updated with actual YAPS token address after launch
   ROUTER_ADDRESS: import.meta.env.VITE_YAPS_ROUTER_ADDRESS || "YOUR_ROUTER_ADDRESS", // This should be updated with actual router address after launch
   
   // Yapswap configuration - using actual PancakeSwap router address
@@ -13,8 +13,8 @@ export const YAPS_CONFIG = {
   },
   
   // Exchange URLs - update with actual addresses after launch
-  EXCHANGE_URL: import.meta.env.VITE_YAPS_EXCHANGE_URL || "https://pancakeswap.finance/swap?outputCurrency=YOUR_YAPS_TOKEN_ADDRESS",
-  CHART_URL: import.meta.env.VITE_YAPS_CHART_URL || "https://www.dextools.io/app/en/bsc/pair-explorer/YOUR_YAPS_TOKEN_ADDRESS",
+  EXCHANGE_URL: import.meta.env.VITE_YAPS_EXCHANGE_URL || "https://pancakeswap.finance/swap?outputCurrency=0x803e02A4DC72fd29216A1dD2AE5cEB004136b4ae",
+  CHART_URL: import.meta.env.VITE_YAPS_CHART_URL || "https://www.dextools.io/app/en/bsc/pair-explorer/0x803e02A4DC72fd29216A1dD2AE5cEB004136b4ae",
   
   // Social links
   SOCIAL_LINKS: {
@@ -26,7 +26,7 @@ export const YAPS_CONFIG = {
   
   // Contract addresses (to be updated after deployment)
   CONTRACTS: {
-    token: import.meta.env.VITE_YAPS_TOKEN_CONTRACT || "",
+    token: import.meta.env.VITE_YAPS_TOKEN_CONTRACT || "0x803e02A4DC72fd29216A1dD2AE5cEB004136b4ae",
     staking: import.meta.env.VITE_YAPS_STAKING_CONTRACT || "",
     lottery: import.meta.env.VITE_YAPS_LOTTERY_CONTRACT || "",
   },
